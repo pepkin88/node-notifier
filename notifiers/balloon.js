@@ -19,6 +19,7 @@ Usage
 // Kill codes:
   2 = Timeout
   3 = Clicked
+  4 = Faded out
 
  */
 var path = require('path'),
@@ -127,6 +128,9 @@ function fromErrorCodeToAction (errorCode) {
   }
   if (errorCode === 3) {
     return 'activate';
+  }
+  if (errorCode === 4) {
+    return 'fade';
   }
   return 'error';
 }
